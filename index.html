@@ -16,15 +16,15 @@
 /* Layout: three Apple-style tiles telling one story. 1) the promise + the honest wait, 2) Tree Valet, the thing to book now, 3) what's coming. One primary action throughout: Book Tree Valet. */
 :root{
   --bg:#F5F7F3; --tile:#FFFFFF; --deep:#1F3D2F; --on-deep:#F5F7F3; --on-deep-muted:#B9CCBF;
-  --red:#8B0F14; --kraft:#C49A6C; --ink:#17221C; --muted:#5B6B61; --line:#DDE4DE; --needle:#2F6B4A;
+  --red:#8B0F14; --kraft:#C49A6C; --ink:#17221C; --muted:#5B6B61; --line:#DDE4DE; --needle:#2F6B4A; --leaf:#74B48D;
   --display:"Young Serif",Georgia,serif; --body:"Figtree",system-ui,-apple-system,sans-serif;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0B130F; --tile:#131F19; --deep:#18301F; --on-deep:#F1F5F2; --on-deep-muted:#A9BDB0;
-  --red:#C8262C; --kraft:#D9B48A; --ink:#EAF1EC; --muted:#9CB0A3; --line:#24372C; --needle:#7DBF97; color-scheme:dark}}
+  --red:#C8262C; --kraft:#D9B48A; --ink:#EAF1EC; --muted:#9CB0A3; --line:#24372C; --needle:#7DBF97; --leaf:#8FCCA6; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0B130F; --tile:#131F19; --deep:#18301F; --on-deep:#F1F5F2; --on-deep-muted:#A9BDB0;
-  --red:#C8262C; --kraft:#D9B48A; --ink:#EAF1EC; --muted:#9CB0A3; --line:#24372C; --needle:#7DBF97; color-scheme:dark}
+  --red:#C8262C; --kraft:#D9B48A; --ink:#EAF1EC; --muted:#9CB0A3; --line:#24372C; --needle:#7DBF97; --leaf:#8FCCA6; color-scheme:dark}
 
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -89,6 +89,7 @@ input[type=text],input[type=email],input[type=tel]{width:100%;min-width:0;paddin
 .coming{padding-bottom:64px}
 .dates{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:620px;margin-top:28px}
 .date{border-radius:16px;padding:22px 18px;background:color-mix(in srgb,var(--on-deep) 8%,transparent);display:flex;flex-direction:column;gap:4px}
+.date-ico{width:64px;height:64px;display:block;margin:0 auto 12px}
 .date b{font-family:var(--display);font-weight:400;font-size:2.4rem;line-height:1;color:var(--on-deep);font-variant-numeric:tabular-nums}
 .date span{color:var(--on-deep-muted);font-size:.95rem}
 .notify{display:flex;gap:10px;width:100%;max-width:460px;margin-top:20px}
@@ -187,8 +188,25 @@ footer{max-width:1000px;margin-inline:auto;padding:28px 20px 40px;display:flex;j
     <span class="eyebrow">Stay informed</span>
     <h2>Grow with us.</h2>
     <div class="dates">
-      <div class="date"><b>2027</b><span>Candle pouring &amp; ornament making classes</span></div>
-      <div class="date"><b>2030</b><span>First cut-your-own Canaan fir harvest</span></div>
+      <div class="date"><svg class="date-ico" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M18 9c5 6 6 10 3 14.5c-1.4 2-4.6 2-6 0C12 19 13 15 18 9z" fill="var(--kraft)"/>
+          <path d="M18 15c2 3 2.4 5 1 7c-.5.7-1.5.7-2 0c-1.4-2-1-4 1-7z" fill="var(--red)"/>
+          <rect x="17" y="24" width="2" height="7" rx="1" fill="var(--on-deep)"/>
+          <rect x="6" y="31" width="24" height="25" rx="5" fill="var(--on-deep)" opacity=".92"/>
+          <rect x="6" y="37" width="24" height="5" fill="var(--kraft)"/>
+          <path d="M46 4v15" stroke="var(--on-deep-muted)" stroke-width="1.5"/>
+          <circle cx="46" cy="33" r="14" fill="var(--kraft)"/>
+          <circle cx="46" cy="33" r="9.5" fill="none" stroke="var(--deep)" stroke-width="1.2" opacity=".45"/>
+          <circle cx="46" cy="33" r="5" fill="none" stroke="var(--deep)" stroke-width="1.2" opacity=".45"/>
+          <circle cx="46" cy="19.5" r="2.5" fill="var(--red)"/>
+        </svg><b>2027</b><span>Candle pouring &amp; ornament making classes</span></div>
+      <div class="date"><svg class="date-ico" viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M26 4 L38 22 H33 L43 36 H36 L47 52 H5 L16 36 H9 L19 22 H14 Z" fill="var(--leaf)"/>
+          <rect x="22.5" y="52" width="7" height="8" rx="1" fill="var(--kraft)"/>
+          <circle cx="26" cy="8" r="3" fill="var(--red)"/>
+          <path d="M42 58 Q50 36 60 40" fill="none" stroke="var(--kraft)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M42 58 L60 40" stroke="var(--on-deep)" stroke-width="2" stroke-dasharray="2 2"/>
+        </svg><b>2030</b><span>First cut-your-own Canaan fir harvest</span></div>
     </div>
     <form class="notify" id="nf">
       <input class="hp" type="text" name="_honey" id="nh" tabindex="-1" autocomplete="off" aria-hidden="true">
