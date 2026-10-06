@@ -90,8 +90,8 @@ input[type=text],input[type=email],input[type=tel]{width:100%;min-width:0;paddin
 .dates{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:620px;margin-top:28px}
 .date{border-radius:16px;padding:22px 18px;background:color-mix(in srgb,var(--on-deep) 8%,transparent);display:flex;flex-direction:column;gap:4px}
 .date-ico{width:64px;height:64px;display:block;margin:0 auto 12px}
-.date b{font-family:var(--display);font-weight:400;font-size:2.4rem;line-height:1;color:var(--on-deep);font-variant-numeric:tabular-nums}
-.date span{color:var(--on-deep-muted);font-size:.95rem}
+.date .topic{font-family:var(--display);font-size:clamp(1.25rem,2.2vw,1.5rem);line-height:1.2;color:var(--on-deep);text-wrap:balance}
+.date .when{margin-top:6px;font-weight:600;font-size:.95rem;letter-spacing:.02em;color:var(--kraft)}
 .notify{display:flex;gap:10px;width:100%;max-width:460px;margin-top:20px}
 .notify input{flex:1;background:var(--tile);border-color:transparent}
 .tile.deep .ok{color:var(--kraft)}
@@ -199,14 +199,14 @@ footer{max-width:1000px;margin-inline:auto;padding:28px 20px 40px;display:flex;j
           <circle cx="46" cy="33" r="9.5" fill="none" stroke="var(--deep)" stroke-width="1.2" opacity=".45"/>
           <circle cx="46" cy="33" r="5" fill="none" stroke="var(--deep)" stroke-width="1.2" opacity=".45"/>
           <circle cx="46" cy="19.5" r="2.5" fill="var(--red)"/>
-        </svg><b>2027</b><span>Candle pouring &amp; ornament making classes</span></div>
+        </svg><span class="topic">Candle pouring &amp; ornament making classes</span><span class="when">Coming 2027</span></div>
       <div class="date"><svg class="date-ico" viewBox="0 0 64 64" aria-hidden="true">
           <path d="M26 4 L38 22 H33 L43 36 H36 L47 52 H5 L16 36 H9 L19 22 H14 Z" fill="var(--leaf)"/>
           <rect x="22.5" y="52" width="7" height="8" rx="1" fill="var(--kraft)"/>
           <circle cx="26" cy="8" r="3" fill="var(--red)"/>
           <path d="M42 58 Q50 36 60 40" fill="none" stroke="var(--kraft)" stroke-width="3" stroke-linecap="round"/>
           <path d="M42 58 L60 40" stroke="var(--on-deep)" stroke-width="2" stroke-dasharray="2 2"/>
-        </svg><b>2030</b><span>First cut-your-own Canaan fir harvest</span></div>
+        </svg><span class="topic">First cut-your-own Canaan fir harvest</span><span class="when">Coming 2030</span></div>
     </div>
     <form class="notify" id="nf">
       <input class="hp" type="text" name="_honey" id="nh" tabindex="-1" autocomplete="off" aria-hidden="true">
