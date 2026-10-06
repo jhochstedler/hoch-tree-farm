@@ -173,6 +173,7 @@ footer{max-width:1000px;margin-inline:auto;padding:28px 20px 40px;display:flex;j
       <input class="hp" type="text" name="_honey" id="bh" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="fields">
         <input type="text" id="bn" required placeholder="Name" aria-label="Name" autocomplete="name">
+        <input type="email" id="be" required placeholder="Email" aria-label="Email" autocomplete="email">
         <input type="tel" id="bp" required placeholder="Phone" aria-label="Phone" autocomplete="tel">
         <input type="text" id="ba" required placeholder="Street address" aria-label="Street address" autocomplete="street-address">
       </div>
@@ -235,6 +236,8 @@ document.getElementById('book').addEventListener('submit',async e=>{
       _template:'table',
       _honey:document.getElementById('bh').value,
       Name:name,
+      Email:document.getElementById('be').value.trim(),
+      _replyto:document.getElementById('be').value.trim(),
       Phone:document.getElementById('bp').value.trim(),
       Address:document.getElementById('ba').value.trim(),
       Plan:p.dataset.name,
